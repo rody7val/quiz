@@ -48,6 +48,9 @@ footer {
 	text-align: center;
 }
 
+input {
+	padding: 4px;
+}
 
 nav span {
 	margin: 0px 10px 0px 0px;
