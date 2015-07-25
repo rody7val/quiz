@@ -51,7 +51,9 @@ footer {
 input {
 	padding: 4px;
 }
-
+span > form > input{
+	width: 80%;
+}
 nav span {
 	margin: 0px 10px 0px 0px;
 }
