@@ -36,8 +36,6 @@ sequelize.sync().success(function(){
 	//success(..) ejecuta el manejador una vez creada la tabla
 	Quiz.count().success(function(count){
 
-		Quiz.destroy(); //destruir tabla
-
 		if(count === 0) { //la tabla se inicializa solo si esta vacia
 			Quiz.create({
 				pregunta: 'Capital de Italia?', 
