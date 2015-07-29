@@ -38,16 +38,16 @@ exports.answer = function(req, res){
 // GET /quizes/
 exports.index = function(req, res){
 	if(req.query.search){
-		var s = req.query.search
+		var s = req.query.search;
 		// var s = '%' + req.query.search.replace(' ', '%') + '%';
 		models.Quiz.findAll({
-			where: ["pregunta like ?", ('%'+s+'%').replace(/\s+/g,'%') ]
+			where: ["pregunta ILIKE ?", ('%'+s+'%').replace(/\s+/g,'%') ]
 		}).then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes});
-		}).catch(function(error){ next(error); })
+		})
 	}else{
 		models.Quiz.findAll().then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes});
-		}).catch(function(error){ next(error); })
+		})
 	}
 };
