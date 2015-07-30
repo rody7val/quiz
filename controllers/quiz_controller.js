@@ -44,10 +44,27 @@ exports.index = function(req, res){
 			where: ["pregunta ILIKE ?", ('%'+s+'%').replace(/\s+/g,'%') ]
 		}).then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes});
-		})
+		}).catch(function(error){ next(error); })
 	}else{
 		models.Quiz.findAll().then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes});
-		})
+		}).catch(function(error){ next(error); })
 	}
+};
+
+// GET /quizes/new
+exports.new = function(req, res){
+	var quiz = models.Quiz.build( // crea obj quiz
+		{pregunta: 'Pregunta', respuesta: 'Respuesta'}
+	);
+	res.render('quizes/new', {quiz: quiz});
+};
+
+// POST /quizes/create
+exports.create = function(req, res){
+	var quiz = models.Quiz.build( req.body.quiz );
+	//guarda en DB los campos pregunta y respuesta de quiz
+	quiz.save({fields: ['pregunta', 'respuesta']}).then(function(){
+		res.redirect('/quizes');
+	}) // Redireccion HTTP (url relativo) lista de preguntas
 };
