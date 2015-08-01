@@ -43,7 +43,7 @@ exports.index = function(req, res){
 		var s = req.query.search;
 		// var s = '%' + req.query.search.replace(' ', '%') + '%';
 		models.Quiz.findAll({
-			where: ["pregunta LIKE ?", ('%'+s+'%').replace(/\s+/g,'%') ]
+			where: ["pregunta ILIKE ?", ('%'+s+'%').replace(/\s+/g,'%') ]
 		}).then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
 		}).catch(function(error){ next(error); })
