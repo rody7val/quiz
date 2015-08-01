@@ -1,6 +1,6 @@
 <label for="preg" class="rem">Pregunta:</label>
 <input type="text" id="preg" name="quiz[pregunta]" 
-	<% if (errors.length) { %> 
+	<% if (errors.length || quiz.edit) { %> 
 		value="<%= quiz.pregunta %>" 
 		placeholder=""
 	<% }else{ %>
@@ -10,7 +10,7 @@
 /> <p>
 <label for="resp" class="rem">Respuesta:</label>
 <input type="text" id="resp" name="quiz[respuesta]" 
-	<% if (errors.length) { %>
+	<% if (errors.length || quiz.edit) { %>
 		value="<%= quiz.respuesta %>" 
 		placeholder=""
 	<% }else{ %>
