@@ -7,7 +7,9 @@
 		value="" 
 		placeholder="<%= quiz.pregunta %>"
 	<% } %>
-/> <p>
+/>
+<p>
+
 <label for="resp" class="rem">Respuesta:</label>
 <input type="text" id="resp" name="quiz[respuesta]" 
 	<% if (errors.length || quiz.edit) { %>
@@ -17,6 +19,19 @@
 		value="" 
 		placeholder="<%= quiz.respuesta %>"
 	<% } %>
-/> <p>
+/>
+<p>
+
+<label for="tem" class="rem">Tematica:</label>
+<select name="quiz[tematica]" >
+  <option value="" selected >Seleccione una opcion</option>
+  <option value="humanidades">Humanidades</option>
+  <option value="ocio">Ocio</option>
+  <option value="ciencia">Ciencia</option>
+  <option value="tecnologia">Tecnología</option>
+  <option value="otro">Otro</option>
+</select>
+<p>
+
 <a href="/quizes">Cancelar</a>
 <input type="submit" value="Salvar">
