@@ -46,11 +46,11 @@ exports.index = function(req, res){
 			where: ["pregunta ILIKE ?", ('%'+s+'%').replace(/\s+/g,'%') ]
 		}).then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
-		}).catch(function(error){ next(error); })
+		})
 	}else{
 		models.Quiz.findAll().then(function(quizes){
 			res.render('quizes/index.ejs', {quizes: quizes, errors: []});
-		}).catch(function(error){ next(error); })
+		})
 	}
 };
 
