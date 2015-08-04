@@ -24,24 +24,12 @@
 
 <label for="tem" class="rem">Tematica:</label>
 <select name="quiz[tematica]" >
-	<% if(quiz.tematica ) {%>
-	  <option value="" selected>Seleccione una opcion</option>
-	<% }%>
-	<% if(quiz.tematica && quiz.tematica === "humanidades") {%>
-	  <option value="humanidades" selected>Humanidades</option>
-	<% }%>
-	<% if(quiz.tematica && quiz.tematica === "ocio") {%>
-	  <option value="ocio" selected>Ocio</option>
-	<% }%>
-  <% if(quiz.tematica && quiz.tematica === "ciencia") {%>
-	  <option value="ciencia" selected>Ciencia</option>
-	<% }%>
-  <% if(quiz.tematica && quiz.tematica === "tecnologia") {%>
-	  <option value="tecnologia" selected>Tecnologia</option>
-	<% }%>
-  <% if(quiz.tematica && quiz.tematica === "otro") {%>
-	  <option value="otro" selected>Otro</option>
-	<% }%>
+	<option value="ocio" <% if(quiz.tematica || !quiz.tematica){ %>selected disabled<% } %> >Seleccione una opcion</option>
+	<option value="humanidades" <% if(quiz.tematica === "humanidades"){ %>selected <% } %> >Humanidades</option>
+	<option value="ocio" <% if(quiz.tematica === "ocio"){ %>selected <% } %> >Ocio</option>
+	<option value="ciencia" <% if(quiz.tematica === "ciencia"){ %>selected <% } %> >Ciencia</option>
+	<option value="tecnologia" <% if(quiz.tematica === "tecnologia"){ %>selected <% } %> >Tecnologia</option>
+	<option value="otro" <% if(quiz.tematica === "otro"){ %>selected <% } %> >Otro</option>
 </select>
 <p>
 

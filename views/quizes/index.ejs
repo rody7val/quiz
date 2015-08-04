@@ -1,9 +1,17 @@
 <table>
+ <thead><h3>Preguntas</h3></thead>
+ <tbody>
+	<tr class="border_bottom">
+		<td>Crear Pregunta</td>
+		<td colspan="2">
+			<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
+		</td>
+	</tr>
 	<% for(var i=0; i<quizes.length; i++) { %>
-		<tr>
+		<tr class="border_bottom">
 			<td>
 				<a href="quizes/<%= quizes[i].id %>">
-					<%= quizes[i].pregunta %>
+					<%= quizes[i].pregunta %> <small>(<%= quizes[i].tematica %>)</small>
 				</a>
 			</td>
 			<td>
@@ -26,5 +34,6 @@
 			</td>
 		</tr>
 	<% } %>
+ </tbody>
 </table> <p>
-<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
+
