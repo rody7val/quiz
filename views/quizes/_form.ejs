@@ -1,37 +1,61 @@
-<label for="preg" class="rem">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" 
-	<% if (errors.length || quiz.edit) { %> 
-		value="<%= quiz.pregunta %>" 
-		placeholder=""
-	<% }else{ %>
-		value="" 
-		placeholder="<%= quiz.pregunta %>"
-	<% } %>
-/>
-<p>
+<table>
+<tr> <!-- @quiz[pregunta] string -->
+	<td>
+		<label for="preg" class="rem">Pregunta:</label>
+	</td>
+	<td>
+		<input type="text" id="preg" name="quiz[pregunta]" 
+			<% if (errors.length || quiz.edit) { %> 
+				value="<%= quiz.pregunta %>" 
+				placeholder=""
+			<% }else{ %>
+				value="" 
+				placeholder="<%= quiz.pregunta %>"
+			<% } %>
+		/>
+	</td>
+</tr>
 
-<label for="resp" class="rem">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" 
-	<% if (errors.length || quiz.edit) { %>
-		value="<%= quiz.respuesta %>" 
-		placeholder=""
-	<% }else{ %>
-		value="" 
-		placeholder="<%= quiz.respuesta %>"
-	<% } %>
-/>
-<p>
+<tr> <!-- @quiz[respuesta] string -->
+	<td>
+		<label for="resp" class="rem">Respuesta:</label>
+	</td>
+	<td>
+		<input type="text" id="resp" name="quiz[respuesta]" 
+			<% if (errors.length || quiz.edit) { %>
+				value="<%= quiz.respuesta %>" 
+				placeholder=""
+			<% }else{ %>
+				value="" 
+				placeholder="<%= quiz.respuesta %>"
+			<% } %>
+		/>
+	</td>
+</tr>
 
-<label for="tem" class="rem">Tematica:</label>
-<select name="quiz[tematica]" >
-	<option value="" <% if(quiz.tematica || !quiz.tematica){ %>selected <% } %> >Seleccione una opcion</option>
-	<option value="humanidades" <% if(quiz.tematica === "humanidades"){ %>selected <% } %> >Humanidades</option>
-	<option value="ocio" <% if(quiz.tematica === "ocio"){ %>selected <% } %> >Ocio</option>
-	<option value="ciencia" <% if(quiz.tematica === "ciencia"){ %>selected <% } %> >Ciencia</option>
-	<option value="tecnologia" <% if(quiz.tematica === "tecnologia"){ %>selected <% } %> >Tecnologia</option>
-	<option value="otro" <% if(quiz.tematica === "otro"){ %>selected <% } %> >Otro</option>
-</select>
-<p>
+<tr> <!-- @quiz[tematica] string -->
+	<td>
+		<label for="tem" class="rem">Tematica:</label>
+	</td>
+	<td>
+		<select name="quiz[tematica]" >
+			<option value="" <% if(quiz.tematica || !quiz.tematica){ %>selected <% } %> >Seleccione una opcion</option>
+			<option value="humanidades" <% if(quiz.tematica === "humanidades"){ %>selected <% } %> >Humanidades</option>
+			<option value="ocio" <% if(quiz.tematica === "ocio"){ %>selected <% } %> >Ocio</option>
+			<option value="ciencia" <% if(quiz.tematica === "ciencia"){ %>selected <% } %> >Ciencia</option>
+			<option value="tecnologia" <% if(quiz.tematica === "tecnologia"){ %>selected <% } %> >Tecnologia</option>
+			<option value="otro" <% if(quiz.tematica === "otro"){ %>selected <% } %> >Otro</option>
+		</select>
+	</td>
+</tr>
 
-<a href="/quizes">Cancelar</a>
-<input type="submit" value="Salvar">
+<tr>
+	<td>
+		<a class="rem" href="/quizes">Cancelar</a>
+	</td>
+	<td>
+		<input type="submit" value="Salvar">
+	</td>
+</tr>
+
+</table>

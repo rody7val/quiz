@@ -1,5 +1,12 @@
-Anadir pregunta: <p>
+<h3> Anadir pregunta: </h3>
+<!-- Form create 
+	@param string pregunta 
+	@param string respuesta
+	@param string tematica
 
+	@return {quiz}  
+	@REST-url post /quizes/create
+-->
 <form method="post" action="/quizes/create">
 	<% include _form.ejs %>
 </form>

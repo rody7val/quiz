@@ -2,9 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
-
+@font-face {
+  font-family: "museosans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/museosans.woff") format("woff");
+}
+  
 body {
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: "museosans"!important;
 }
 
 a {
@@ -43,12 +49,24 @@ header, nav, section {
 	text-align: center;
 }
 
-table{
-	margin: 0 auto
+table {
+	margin: 0 auto;
+	text-align: left;
+}
+
+section form {
+	width: 300px;
+	margin: 0 auto;
+	text-align: left;
 }
 
 tr.border_bottom td {
   border-bottom:1pt solid #ccc;
+}
+
+.rem{
+	text-align: right!important;
+	display: block!important;
 }
 
 footer {
@@ -66,6 +84,11 @@ span > form > input{
 
 nav span {
 	margin: 0px 10px 0px 0px;
+}
+
+.hr{
+	width:60%; 
+	margin: 20px auto
 }
 
 #ErrorMsgs {
