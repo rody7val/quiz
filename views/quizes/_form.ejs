@@ -24,7 +24,7 @@
 
 <label for="tem" class="rem">Tematica:</label>
 <select name="quiz[tematica]" >
-	<option value="ocio" <% if(quiz.tematica || !quiz.tematica){ %>selected<% } %> >Seleccione una opcion</option>
+	<option value="" <% if(quiz.tematica || !quiz.tematica){ %>selected <% } %> >Seleccione una opcion</option>
 	<option value="humanidades" <% if(quiz.tematica === "humanidades"){ %>selected <% } %> >Humanidades</option>
 	<option value="ocio" <% if(quiz.tematica === "ocio"){ %>selected <% } %> >Ocio</option>
 	<option value="ciencia" <% if(quiz.tematica === "ciencia"){ %>selected <% } %> >Ciencia</option>
