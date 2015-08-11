@@ -19,10 +19,17 @@
 	<div id="page-wrap">
 
 		<header class="main" id="h1">
+			<% if(!session.user) { %>
+				<span class="right"><a href="/login">Login</a></span>
+			<% }else{ %>
+				<span class="right"> <%= session.user.username %> <a href="/logout">Logout</a></span>
+			<% } %>
+			
 			<h2>Quiz: el juego de las preguntas</h2>
 		</header>
 		
-		<nav class="main" id="n1" role="navigation">
+	<div class="cf main">
+		<nav id="n1" role="navigation">
 			<span><a href="/">Home</a></span>
 			<span><a href="/quizes">Preguntas</a></span>
 			<span><a href="/author">Creditos</a></span>
@@ -35,7 +42,7 @@
 			</span>
 		</nav>
 		
-		<section class="main" id="s1">
+		<section id="s1">
 			<% if (errors.length) { %>
 				<span id="ErrorMsgs">
 					Corregir errores:<br/>
@@ -46,7 +53,8 @@
 			<% } %>
 			<div><%- body %></div>
 		</section>
-		
+	</div>
+
 		<footer class="main" id="f1">
 			<a target="_blanck" href="http://es.wikipedia.org/wiki/Quiz">Que es un Quiz?</a> | 
 			<a target="_blanck" href="https://github.com/rody7val/quiz">Fork me on GitHub</a>

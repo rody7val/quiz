@@ -1,97 +1,101 @@
-* {
-	margin: 0;
-	padding: 0;
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
-@font-face {
+@font-face{
   font-family: "museosans";
   font-style: normal;
   font-weight: 400;
   src: url("/fonts/museosans.woff") format("woff");
 }
-  
-body {
+html, body{
+	margin: 0px;
+	padding: 0px;
 	font-family: "museosans"!important;
 }
-
-a {
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+a{
 	text-decoration: none;
  	color: #00B7FF;
 }
-
-a:hover {
+a:hover{
 	text-decoration: underline;
 }
-
-#page-wrap {
-	margin: 2% auto;
+#page-wrap{
 	color: #333;
 }
-
-#page-wrap > .main {
+.main{
+	background: none repeat scroll 0% 0% #EEE;
 	border-bottom: 1px solid #999;
 	margin-bottom: 1px;
 	padding: 1%;
 	color: #555;
 }
-
 .img{
 	display: block;
 	width: 100px;
 	margin: 0 auto;
 }
-
-section > div {
+section > div{
 	padding: 20px;
 }
-
-header, nav, section {
+header, nav, section{
 	background: #eee;
 	text-align: center;
 }
-
-table {
+table{
 	margin: 0 auto;
 	text-align: left;
 }
-
-section form {
+section form{
 	width: 300px;
 	margin: 0 auto;
 	text-align: left;
 }
-
-tr.border_bottom td {
+tr.border_bottom td{
   border-bottom:1pt solid #ccc;
 }
-
+td > form{
+	width: auto;
+}
 .rem{
 	text-align: right!important;
 	display: block!important;
 }
-
-footer {
+footer{
 	background: #eee;
 	text-align: center;
 }
-
-input {
+input{
 	padding: 4px;
 }
-
 span > form > input{
-	width: 80%;
+	width: 100%;
 }
-
-nav span {
+nav span{
 	margin: 0px 10px 0px 0px;
 }
-
 .hr{
 	width:60%; 
 	margin: 20px auto
 }
-
-#ErrorMsgs {
+#ErrorMsgs{
 	color: #f61;
 	font-size: smaler;
+}
+code{
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+.right{
+	text-align: right;
+	display: block;
 }

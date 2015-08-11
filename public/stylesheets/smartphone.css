@@ -5,7 +5,9 @@ body {
 #page-wrap:after {
 	content: "Smartphone Layout";
 }
-
+h3{
+	margin: 2px;
+}
 h2 span, section h3 {
 	display: block;
 }
