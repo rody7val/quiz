@@ -78,4 +78,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-// refrescar base de datos heroku
