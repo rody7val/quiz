@@ -1,37 +1,39 @@
 <table>
  <thead><h3>Preguntas</h3></thead>
  <tbody>
-	<tr class="border_bottom">
-		<td>Crear Pregunta</td>
-		<td colspan="2">
-			<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
-		</td>
-	</tr>
+	<% if (session.user) { %>
+		<tr class="border_bottom">
+			<td>Crear Pregunta</td>
+			<td colspan="2">
+				<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
+			</td>
+		</tr>
+	<% } %>
 	<% for(var i=0; i<quizes.length; i++) { %>
 		<tr class="border_bottom">
-			<td>
+			<td> <!-- a preguntas -->
 				<a href="quizes/<%= quizes[i].id %>">
 					<%= quizes[i].pregunta %> 
 				</a>(<code><small><%= quizes[i].tematica %></small></code>)
 			</td>
-			<td>
-				<a href="quizes/<%= quizes[i].id %>/edit">
-					<button>Editar</button>
-				</a>
-			</td>
-			<td>
-				<form 
-					method="post" 
-					action="quizes/<%= quizes[i].id %>?_method=delete"
-				>
-					<button 
-						type="submit"
-						onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');"
-					>
-						Borrar
-					</button>
-				</form>
-			</td>
+			<% if (session.user) { %>
+				<td> <!-- button editar -->
+					<a href="quizes/<%= quizes[i].id %>/edit">
+						<button>Editar</button>
+					</a>
+				</td>
+				<td> <!-- button eliminar -->
+					<form 
+						method="post" 
+						action="quizes/<%= quizes[i].id %>?_method=delete">
+						<button 
+							type="submit"
+							onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
+							Borrar
+						</button>
+					</form>
+				</td>
+			<% } %>
 		</tr>
 	<% } %>
  </tbody>
