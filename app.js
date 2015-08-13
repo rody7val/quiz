@@ -34,8 +34,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next){
     // guardar path en session.redir para despues de login
     if(!req.path.match(/\/login|\/logout/)){
-        req.session.redir = req.path;
+      req.session.redir = req.path;
     }
+
+    //auto-logout
+    var time = Number( new Date().getTime() );
+    var timeOut = 120; // 2 min
+    if (req.session.contador && req.session.user) {
+        //1000 es un seg
+        if ((time - req.session.contador) > timeOut*1000) {
+            delete req.session.user;
+            res.redirect('/login');
+        }
+    }
+    req.session.contador = time;
+
     // hacer visible req.session en las vistas
     res.locals.session = req.session;
     next();
